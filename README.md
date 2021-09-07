@@ -5,6 +5,10 @@ This repo contains information on how to auto deploy and manage Sysmon via group
 
 If you are deploying this in production, create at least two GPOs. One GPO for managing Sysmon to a test group of computers. A second GPO for managing Sysmon for production computers. Initially make changes to the test GPO. Once the changes are confirmed as working make the same change to the production GPO. You can create a subfolder per GPO to manage as many assets as you wish with different Sysmon configurations.
 
+### Testing
+
+Tested on Windows 10 and Server 2016. Proceed at your own risk.
+
 ## Installation
 1. Login to Windows using an account that has permission to write to your domain controllers Sysvol. **Example** - \\yourdomain.int\sysvol
 2. Create a folder under your domain called sysmon **Example** - \\yourdomain.int\sysvol\yourdomain.int\sysmon
