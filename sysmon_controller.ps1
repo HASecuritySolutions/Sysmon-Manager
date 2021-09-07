@@ -1,6 +1,14 @@
+# Change tyrellcorp.us with your domain
 $shared_sysmon_folder = '\\tyrellcorp.us\sysvol\tyrellcorp.us\software\sysmon'
-$local_sysmon_folder = 'C:'
+# Below is a local path that this script can log and track sysmon
+$local_sysmon_folder = 'C:\Windows\sysmon_tracking'
 $max_log_file_size = 10 # This is in KB
+
+# Create local path if it does not exist
+if (!(Test-Path -PathType Container $local_sysmon_folder)){
+    Write-Host "Local folder does not exist - creating it"
+    New-Item -ItemType Directory -Force -Path $local_sysmon_folder
+}
 
 # DO NOT CHANGE VARIABLES BELOW THIS POINT
 $log_output_file = $local_sysmon_folder + "\" + "sysmon_output.txt"
