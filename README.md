@@ -8,9 +8,9 @@ If you are deploying this in production, create at least two GPOs. One GPO for m
 ## Installation
 1. Login to Windows using an account that has permission to write to your domain controllers Sysvol. **Example** - \\yourdomain.int\sysvol
 2. Create a folder under your domain called sysmon **Example** - \\yourdomain.int\sysvol\yourdomain.int\sysmon
-3. Download and extract Microsoft Sysmon into the above folder. Make sure sysmon.exe and sysmon64.exe are placed directly into the folder created at step number 2.
-4. Download a sysmon configuration file and place it into the folder created during step # 2. **Recommendation** - Use Sysmon Modular's configuration file https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml
-5. Download **sysmon_controller.ps1** from this repository and place it into the folder created during step number 2
+3. Download and extract Microsoft Sysmon into the above folder. Make sure sysmon.exe and sysmon64.exe are placed directly into the folder created at step two.
+4. Download a sysmon configuration file and place it into the folder created during step two. **Recommendation** - Use Sysmon Modular's configuration file https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml
+5. Download **sysmon_controller.ps1** from this repository and place it into the folder created during step two
 6. Modify sysmon_controller.ps1 so that $shared_sysmon_folder points to the folder created at step number 2 and modify $local_sysmon_folder if you'd like tracking files to be placed in a different local folder
 7. Create a Group Policy Object (GPO) and link it to the machines you want Sysmon managed. The GPO settings should be similar to the GPO settings found below.
 
